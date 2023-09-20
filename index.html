@@ -11,6 +11,7 @@
             margin: 0;
             padding: 0;
             background-color: #f0f0f0;
+            transition: background-color 0.3s ease-in-out;
         }
 
         header {
@@ -18,6 +19,7 @@
             color: #fff;
             text-align: center;
             padding: 20px 0;
+            transition: background-color 0.3s ease-in-out;
         }
 
         nav {
@@ -31,10 +33,12 @@
             color: #fff;
             margin: 0 20px;
             font-size: 18px;
+            transition: color 0.3s ease-in-out;
         }
 
         nav a:hover {
             text-decoration: underline;
+            color: #ff9900;
         }
 
         .container {
@@ -43,6 +47,14 @@
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .container.active {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         h1 {
@@ -52,6 +64,29 @@
         p {
             font-size: 18px;
             line-height: 1.6;
+        }
+
+        /* Fade-In-Effekte beim Scrollen */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animation für die Portfolio-Elemente */
+        .portfolio-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .portfolio-item.active {
+            animation: fadeIn 0.5s ease-in-out 1 forwards;
         }
     </style>
 </head>
@@ -66,19 +101,41 @@
         <a href="#contact">Kontakt</a>
     </nav>
 
-    <div class="container" id="about">
+    <div class="container active" id="about">
         <h2>Über mich</h2>
         <p>Hier kannst du eine kurze Beschreibung über dich selbst einfügen.</p>
     </div>
 
-    <div class="container" id="portfolio">
+    <div class="container active" id="portfolio">
         <h2>Portfolio</h2>
-        <!-- Hier kannst du Beispiele deiner Arbeiten hinzufügen -->
+        <!-- Beispiel für ein Portfolio-Element -->
+        <div class="portfolio-item">
+            <h3>Projekt 1</h3>
+            <p>Beschreibung des Projekts 1.</p>
+        </div>
+        <div class="portfolio-item">
+            <h3>Projekt 2</h3>
+            <p>Beschreibung des Projekts 2.</p>
+        </div>
+        <!-- Weitere Portfolio-Elemente hinzufügen -->
     </div>
 
-    <div class="container" id="contact">
+    <div class="container active" id="contact">
         <h2>Kontakt</h2>
         <p>Kontaktinformationen: deine@email.de</p>
     </div>
+
+    <script>
+        // Füge JavaScript-Code hier hinzu, um die Animationen bei Bedarf auszulösen
+        window.addEventListener('scroll', () => {
+            const containers = document.querySelectorAll('.container');
+            containers.forEach((container) => {
+                const containerTop = container.getBoundingClientRect().top;
+                if (containerTop < window.innerHeight - 100) {
+                    container.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
