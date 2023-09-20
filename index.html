@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jason Nikolaus</title>
+    <title>Jason Nikolaus - Historiker</title>
     <style>
         /* Füge hier deine CSS-Stile hinzu */
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Times New Roman", serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
-            transition: background-color 0.3s ease-in-out;
+            background-color: #f9f9f9;
         }
 
         header {
@@ -19,7 +18,6 @@
             color: #fff;
             text-align: center;
             padding: 20px 0;
-            transition: background-color 0.3s ease-in-out;
         }
 
         nav {
@@ -47,23 +45,20 @@
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-        }
-
-        .container.active {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         h1 {
-            font-size: 32px;
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         p {
             font-size: 18px;
             line-height: 1.6;
+            color: #555;
         }
 
         /* Fade-In-Effekte beim Scrollen */
@@ -97,32 +92,32 @@
     
     <nav>
         <a href="#about">Über mich</a>
-        <a href="#portfolio">Portfolio</a>
+        <a href="#portfolio">Forschung</a>
         <a href="#contact">Kontakt</a>
     </nav>
 
-    <div class="container active" id="about">
+    <div class="container" id="about">
         <h2>Über mich</h2>
-        <p>Hier kannst du eine kurze Beschreibung über dich selbst einfügen.</p>
+        <p>Ich bin ein Historiker mit Leidenschaft für die Vergangenheit und die Erforschung historischer Ereignisse.</p>
     </div>
 
-    <div class="container active" id="portfolio">
-        <h2>Portfolio</h2>
+    <div class="container" id="portfolio">
+        <h2>Forschung</h2>
         <!-- Beispiel für ein Portfolio-Element -->
         <div class="portfolio-item">
-            <h3>Projekt 1</h3>
-            <p>Beschreibung des Projekts 1.</p>
+            <h3>Forschungsprojekt 1</h3>
+            <p>Eine Studie über...</p>
         </div>
         <div class="portfolio-item">
-            <h3>Projekt 2</h3>
-            <p>Beschreibung des Projekts 2.</p>
+            <h3>Forschungsprojekt 2</h3>
+            <p>Eine Analyse von...</p>
         </div>
         <!-- Weitere Portfolio-Elemente hinzufügen -->
     </div>
 
-    <div class="container active" id="contact">
+    <div class="container" id="contact">
         <h2>Kontakt</h2>
-        <p>Kontaktinformationen: deine@email.de</p>
+        <p>Sie können mich unter jason.nikolaus@email.de erreichen.</p>
     </div>
 
     <script>
